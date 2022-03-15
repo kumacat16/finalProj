@@ -1,0 +1,355 @@
+/* Comments */
+/*
+Version: 2.0;
+last modified: 02/26/2022;
+Author: Natalie Carlson;
+Email:: Carlso79@wwu.edu
+Table of content
+1. Body
+2. Wrapper
+3. Header
+4. navigation
+5. banner image
+6. main
+7. footer
+*/
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
+@import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e7acb6;
+  font: 20px/1.5 "Nunito", sans-serif;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem 2rem 2rem;
+  margin: 1rem;
+  width: 100%;
+  z-index: 4;
+}
+
+.logoImg > img {
+  width: 100%;
+  max-width: 300px;
+  z-index: 6;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+
+nav li {
+  margin: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+  white-space: nowrap;
+  font-weight: 700;
+  background-color: #e7ace4;
+  border-style: solid;
+  border-color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/*
+// BUTTON //--------------------------
+.button {
+    cursor: pointer;
+    background-color: $button-background;
+    color: $text-color;
+    position: relative;
+    padding: 0.5em 1em;
+    z-index: 1;
+}
+.button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: blue;
+
+    //TRANSFORMATION
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.button:hover {
+    background-color: red;
+    color: $text-color;
+
+    //TRANSITION EFFECT
+    transform: scaleX(0);
+    transform-origin: right;
+}
+*/
+.button {
+  cursor: pointer;
+  background-color: #b493c8;
+  color: black;
+  position: relative;
+  padding: 0.5em 1em;
+  z-index: 1;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: pink;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.button:hover {
+  background-color: #b493c8;
+  color: black;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+#toggle {
+  display: none;
+}
+
+.label {
+  display: none;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #cf8c97;
+  margin: 2rem 8rem 2rem 8rem;
+  opacity: 20%;
+}
+
+.socials .insta,
+.socials .youtube {
+  padding: 2rem;
+}
+
+.directorGal {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 1em;
+  padding: 2rem 2rem 2rem;
+  margin: 1rem;
+  position: relative;
+  background-color: antiquewhite;
+}
+
+.maingalText {
+  grid-column: 1;
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  background-color: lightcyan;
+}
+
+.rightside {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.gallArt {
+  position: relative;
+  background-color: aquamarine;
+  height: 20vh;
+}
+
+.gallGD {
+  position: relative;
+  background-color: blue;
+  height: 20vh;
+}
+
+.gallPhoto {
+  position: relative;
+  background-color: forestgreen;
+  height: 20vh;
+}
+
+.gallPhoto > img,
+.gallGD > img,
+.gallArt > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  position: absolute;
+}
+
+.gallPhoto > button,
+.gallGD > button,
+.gallArt > button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(163, 96, 107, 0.7);
+  padding: 0rem 6rem 0rem 6rem;
+  color: white;
+}
+
+.indexMain {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-row: 1fr 1fr;
+  column-gap: 1rem;
+  margin: 1em;
+}
+
+.mainWelcome {
+  position: absolute;
+  z-index: 11;
+}
+
+.btnGal {
+  padding: 1em;
+}
+
+.artGallery {
+  position: relative;
+}
+
+.artslider {
+  grid-column: span 2;
+  grid-row: span 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: #b493c8;
+}
+
+.artslider img {
+  width: 100%;
+  height: 100%;
+}
+
+.GDgallery {
+  background-color: #e7ace4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 2rem;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/*
+
+//box shadow holds text
+.galArt,
+.galPhoto,
+.galGD {
+    position: relative;
+    //box shadow holds text
+    -webkit-box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
+    box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
+}
+.directorGal > a {
+    position: absolute;
+    inset: 20px 40px 30px 10px;
+    background-color: $background-color;
+
+}
+.directorGal > img {
+    width: 100%;
+}
+
+//ART GALLERY
+
+
+
+
+
+.btnGal {
+    grid-column: 4fr;
+    color: black;
+    padding: 0.5em;
+    background-color: white;
+}
+
+// TOY Photo gallery container
+.container-gallery {
+    display: grid;
+    justify-content: space-between;
+}
+
+.container-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.item > a > img {
+    color: white;
+}
+
+.button {
+    text-decoration: none;
+}
+.footer {
+    display: grid;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    //come back to
+    .label {
+        display: block;
+        cursor: pointer;
+    }
+    nav ul {
+        text-align: center;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin: 0 auto;
+        top: 5.6em;
+        width: 80%;
+        left: 10%;
+        position: absolute;
+        background-color: $text-background;
+        max-height: 0;
+        overflow: hidden;
+    }
+    nav a {
+        opacity: 1;
+    }
+    #toggle:checked + .menu {
+        max-height: 300px;
+    }
+    header > .logo {
+        padding: 1em 0.5em 0.5em 0.5em;
+    }
+    .menu a {
+        display: block;
+        margin: 0;
+    }
+}
+*/

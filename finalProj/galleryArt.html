@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/02b034fe5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-con" href="favicon/favicon.ico">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Danny Brown</title>
+
+</head>
+
+<>
+    <header>
+
+        <div class="logo">
+            <div class="logoImg">
+                <img src="Images/danny/logo.png">
+            </div>
+            <nav>
+                <label class="label" for="toggle"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="toggle">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blogMain.html">Blog</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+        <section class="artGallery">
+            <h1>Fine Art Gallery</h1>
+            <div class="artslider">
+                <div class="item"><a href="Images/art/pokemon.png" data-caption="Let's Play Pokemon"></a>
+                    <img src="Images/art/pokemon.png">
+                </div>
+                <div class="item"><a href="Images/art/abstractPort.png" data-caption="Abstract Portrait of Danny"></a>
+                    <img src="Images/art/abstractPort.png">
+                </div>
+                <div class="item"><a href="Images/art/babydanny.png" data-caption="Baby Danny Portrait"></a>
+                    <img src="Images/art/babydanny.png">
+                </div>
+                <div class="item"><a href="Images/art/fish.png" data-caption="Deep-Water Fish"></a>
+                    <img src="Images/art/fish.png">
+                </div>
+                <div class="item"><a href="Images/art/butterfly.png" data-caption="Migrant Butterfly Painting"></a>
+                    <img src="Images/Images/art/butterfly.png">
+                </div>
+                <div class="item"><a href="Images/art/immigrant.png"
+                        data-caption="Guatemalan American Danny Painting Portrait"></a>
+                    <img src="Images/art/immigrant.png">
+                </div>
+                <div class="item"><a href="Images/art/kingDanny.png" data-caption="King Danny Doodle"></a>
+                    <img src="Images/art/kingDanny.png">
+                </div>
+                <div class="item"><a href="Images/art/light.png" data-caption="Eye in the Light Doodle"></a>
+                    <img src="Images/art/light.png">
+                </div>
+                <div class="item"><a href="Images/art/mariner.png" data-caption="Mariner Appreciation Digital Art"></a>
+                    <img src="Images/art/mariner.png">
+                </div>
+                <div class="item"><a href="Images/art/spiderman.png" data-caption="Spiderman Doodle"></a>
+                    <img src="Images/art/spiderman.png">
+                </div>
+                <div class="item"><a href="Images/art/stilllife.png" data-caption="Still Life With Charcoal "></a>
+                    <img src="Images/art/stilllife.png">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <section class="socials">
+            <div class="insta">
+                <a href="https://www.instagram.com/blanketboystoys/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="youtube">
+                <a href="https://www.youtube.com/channel/UCOoSkSId2uUVWv3FA23ifjw"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+
+        </section>
+    </footer>
+    <!--Required JavaScript-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/popper.js"></script>
+    <script src="js/jquery.cycle.all.js"></script>
+    <script>
+        $(function(){
+            $('.artslider').cycle({
+                fx:"fade", //or scrollHorz?
+                timeout: 3000,
+                pause: 1
+            });
+        });
+    </script>
+</body>
+
+</html>
