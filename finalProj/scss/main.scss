@@ -1,53 +1,51 @@
-/* Comments */
+
 /*
-Version: 2.0;
-last modified: 02/26/2022;
-Author: Natalie Carlson;
-Email:: Carlso79@wwu.edu
-Table of content
 1. Body
-2. Wrapper
-3. Header
-4. navigation
-5. banner image
-6. main
-7. footer
+2. Navigation
+3. Index
+4. Buttons
+5. Social Media
+6. About 
+7. Contact
 */
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
 @import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
 
-//VARIABLES
-$text-color: hsl(0, 0%, 0%);
-$background-color: hsl(350, 55%, 79%);
-$text-background: hsl(303, 55%, 79%);
-$button-background: hsl(278, 32%, 68%);
-$color-main-100: hsl(350, 100%, 88%);
-$color-main-300: hsl(350, 41%, 68%);
-$color-main-500: hsl(350, 25%, 42%);
 
+//VARIABLES
+$text-color: white;
+$background-color: hsla(35, 100%, 93%, 0.918);
+$blue-100: hsl(190, 85%, 76%);
+$blue--300: hsl(206, 91%, 75%);
+$org--100: hsla(35, 100%, 55%, 0.918);
+$org--300: hsla(35, 94%, 56%, 0.957);
+$org--500: hsla(35, 90%, 40%, 0.957);
+
+$logo--100: hsl(182, 49%, 69%);
+$logo-300: hsl(183, 100%, 44%);
 
 * {
     box-sizing: border-box;
 }
 body {
     background-color: $background-color;
-    font: 20px/1.5 "Nunito", sans-serif;
-    color: black;
+    font: 20px/1.5 "Montserrat", sans-serif;
+    color: $text-color;
 }
 a {
     text-decoration: none;
 }
 
-//NAVIGATION
+//================ NAVIGATION ==================
 .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: $org--100;
 
-    padding: 2rem 2rem 2rem; //adds padding to bottom
-    margin: 1rem; //top right&left bottom
-    //background-color: red;
+    padding: 2rem ; //adds padding to bottom
+    margin: 2rem auto; //top right&left bottom
     width: 100%;
     z-index: 4;
 }
@@ -63,6 +61,7 @@ nav {
         display: flex;
         list-style: none;
         text-align: center;
+        background-color: $org--300;
     }
     li {
         // positioning
@@ -72,22 +71,65 @@ nav {
 
         //display
         font-weight: 700;
-        background-color: $text-background;
+        background-color: $org--100;
         border-style: solid;
-        border-color: black;
+        border-color: $org--500;
     }
     a {
+        text-decoration: none;
+        font-weight: 400;
+        color: $text-color;
+        transition: 0.3s all ease;
+        -webkit-transition: 0.3s all ease;
+        -o-transition: 0.3s all ease;
+        background-color: transparent;
+    }
+}
+
+//================ INDEX =============================
+
+.mainWelcome {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $blue-100;
+    padding: 2rem;
+    height: 500px;
+    width: 100%;
+    margin: 2em auto;  
+}
+.mainWelcome > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 9;
+    position: relative;
+    backdrop-filter: blur(1rem);
+}
+
+.welText > h1 {
+    font-weight: 1000;
+    color: $text-color;
+}
+.welText > button{
+    cursor: pointer;
+    position: absolute;
+    background-color: $logo-300;
+    margin: 1rem;
+    padding: 1rem;
+    z-index: 11;
+    a{
         text-decoration: none;
         color: $text-color;
     }
 }
 
+// BUTTON TRANSFORMATIONS//--------------------------
 
-/*
-// BUTTON //--------------------------
 .button {
     cursor: pointer;
-    background-color: $button-background;
+    background-color: $blue-100;
     color: $text-color;
     position: relative;
     padding: 0.5em 1em;
@@ -101,49 +143,14 @@ nav {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: blue;
+    background-color: $blue--300;
 
     //TRANSFORMATION
     transform: scaleX(1);
     transform-origin: left;
 }
 .button:hover {
-    background-color: red;
-    color: $text-color;
-
-    //TRANSITION EFFECT
-    transform: scaleX(0);
-    transform-origin: right;
-}
-*/
-
-
-
-//NAV BUTTON
-.button {
-    cursor: pointer;
-    background-color: $button-background;
-    color: $text-color;
-    position: relative;
-    padding: 0.5em 1em;
-    z-index: 1;
-}
-.button::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-color: pink;
-
-    //TRANSFORMATION
-    transform: scaleX(1);
-    transform-origin: left;
-}
-.button:hover {
-    background-color: $button-background;
+    background-color: $blue--300;
     color: $text-color;
 
     //TRANSITION EFFECT
@@ -159,183 +166,80 @@ nav {
     display: none;
 }
 
-//SOCIALS
+//=============SOCIALS ==============================
 .socials {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: $color-main-300;
+    background-color: $logo-300;
     margin: 2rem 8rem 2rem 8rem;
-    opacity: 20%;
+    z-index: 200;
     .insta,
     .youtube {
-        padding: 2rem;
+        padding: 1rem;
     }
+
 }
-//GALLERY
-.directorGal {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    column-gap: 1em;
-    padding: 2rem 2rem 2rem; //adds padding to bottom
+
+//============= ABOUT ME =========================
+.intro{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    background-color: $org--100;
+}
+.introLeft{
     margin: 1rem;
-    position: relative;
-    background-color: antiquewhite;
+    justify-items: flex-start;
 }
-.maingalText {
-    grid-column: 1;
-    text-orientation: upright;
-    writing-mode: vertical-lr;
-    background-color: lightcyan;
-}
-
-.rightside{
-    display:grid;
-    row-gap: 1rem;
-}
-.gallArt {
-    position: relative;
-    background-color: aquamarine;
-    height: 20vh;
-}
-.gallGD {
-    position: relative;
-    background-color: blue;
-    height: 20vh;
-}
-.gallPhoto {
-    position: relative;
-    background-color: forestgreen;
-    height: 20vh;
-}
-.gallPhoto > img,
-.gallGD > img,
-.gallArt > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center right;
-    position: absolute;
-}
-
-.gallPhoto > button,
-.gallGD > button,
-.gallArt > button{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(163, 96, 107, 0.7);
-    padding: 0rem 6rem 0rem 6rem;
-
-    color: white;
-}
-
-//================ INDEX =============================
-.indexMain {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-row: 1fr 1fr;
-    column-gap: 1rem;
-    margin: 1em;
-}
-.mainWelcome{
-    position: absolute;
-    z-index: 11;
-}
-.btnGal{
+.introRight{
+    margin: 1rem;
+    background-color:$logo--100;
     padding: 1em;
-}
-
-
-// ==========ART GALLERY =========================
-.artGallery{
-    position:relative
-}
-.artslider{
-    grid-column: span 2;
-    grid-row: span 2;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 10;
-    background-color:hsl(278, 32%, 68%);
-    img{
-       
-        width:100%;
-        height:100%;
+    justify-items: center;
+    align-content: center;
+    h1, h3{
+        font-weight: 700;
+        padding-top: 1rem;;
     }
 }
 
-//========================== GD GALLERY =====================================
-//LIGHTBOX FROM CLASS CS
-.GDgallery{
-    background-color:$text-background;
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    grid-gap:20px;
-    padding: 2rem;
-}
-.card img{
-    width:100%;
-    object-fit: cover;
-}
-/*
-
-//box shadow holds text
-.galArt,
-.galPhoto,
-.galGD {
-    position: relative;
-    //box shadow holds text
-    -webkit-box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
-    box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
-}
-.directorGal > a {
-    position: absolute;
-    inset: 20px 40px 30px 10px;
-    background-color: $background-color;
-
-}
-.directorGal > img {
-    width: 100%;
-}
-
-//ART GALLERY
-
-
-
-
-
-.btnGal {
-    grid-column: 4fr;
-    color: black;
-    padding: 0.5em;
-    background-color: white;
-}
-
-// TOY Photo gallery container
-.container-gallery {
+//==================== CONTACT ===========================
+.reachOut{
     display: grid;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem;
+    background-color: $blue-100;
+    height: 50vh;
 }
-
-.container-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-}
-
-.item > a > img {
-    color: white;
-}
-
-.button {
-    text-decoration: none;
-}
-.footer {
-    display: grid;
+.reachText{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding: 2rem;
+    h1{
+        display: inline;
+        font-weight: bolder;
+    }
+    p{
+        font-weight: 600;
+    }
 }
+.contactForm{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+    row-gap: 4rem;
+    padding: 2rem;
+    #phone, #email, #name{
+        padding: 1rem;
+        background-color: $background-color;
+    }
+    .submit{
+        padding:2px;
+        background-color: $background-color;
+    }
+}
+
 
 @media (max-width: 992px) {
     //come back to
@@ -348,11 +252,11 @@ nav {
         grid-template-columns: 1fr;
         justify-content: center;
         margin: 0 auto;
-        top: 5.6em;
-        width: 80%;
+        top: 5em;
+        width: 70%;
         left: 10%;
         position: absolute;
-        background-color: $text-background;
+        background-color: $background-color;
         max-height: 0;
         overflow: hidden;
     }
@@ -360,7 +264,7 @@ nav {
         opacity: 1;
     }
     #toggle:checked + .menu {
-        max-height: 300px;
+        max-height: 500px;
     }
     header > .logo {
         padding: 1em 0.5em 0.5em 0.5em;
@@ -370,4 +274,4 @@ nav {
         margin: 0;
     }
 }
-*/
+

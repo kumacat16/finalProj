@@ -1,0 +1,143 @@
+/*
+GALLERIES
+1. Main Gallery
+2. Art Gallery
+3. GD Gallery
+4. Photography Gallery
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
+@import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
+
+@import url(node_modules/bootstrap/scss/bootstrap.scss);
+@import url(scss/blog.scss);
+@import url(scss/main.scss);
+
+//VARIABLES
+$text-color: white;
+$background-color: hsla(35, 100%, 93%, 0.918);
+$blue-100: hsl(190, 85%, 76%);
+$blue--300: hsl(206, 91%, 75%);
+$org--100: hsla(35, 100%, 55%, 0.918);
+$org--300: hsla(35, 94%, 56%, 0.957);
+$org--500: hsla(35, 90%, 40%, 0.957);
+
+$logo--100: hsl(182, 49%, 69%);
+$logo-300: hsl(183, 100%, 44%);
+
+//=============GALLERY DIRECTOR=======================
+.directorGal {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding: 2rem 2rem 2rem; //adds padding to bottom
+    margin: 1rem;
+    position: relative;
+    background-color: $blue-100;
+}
+.maingalText {
+    grid-column: 1;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    color: $text-color;
+    padding-top: 2rem;
+    font-weight: 1000;
+}
+
+.rightside {
+    display: grid;
+    row-gap: 1rem;
+}
+.gallArt {
+    position: relative;
+    background-color: aquamarine;
+    height: 20vh;
+}
+.gallGD {
+    position: relative;
+    background-color: blue;
+    height: 20vh;
+}
+.gallPhoto {
+    position: relative;
+    background-color: forestgreen;
+    height: 20vh;
+}
+.gallPhoto > img,
+.gallGD > img,
+.gallArt > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    position: absolute;
+}
+.gallPhoto > button,
+.gallGD > button,
+.gallArt > button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $blue--300;
+    padding: 0rem 6rem 0rem 6rem;
+    a {
+        color: $text-color;
+    }
+}
+
+// ========== ART GALLERY =========================
+//slider
+
+
+.artGallery{
+    width: 1140px;
+    height: 500px;
+    margin: 80px auto;
+    position: relative;
+}
+.slider img{
+    width: 100%;
+    position: absolute;
+}
+//========================== GD GALLERY =====================================
+
+//Baguette Box
+.GDgallery {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, auto));
+    //grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 2rem;
+    background-color: $logo--100;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+//===================PHOTOGRAPHY GALLERY =====================
+
+//Baguette Box
+.galToy {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, auto));
+    //grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 2rem;
+    background-color: $logo--100;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+
+@media (max-width: 992px) {
+    .artGallery, .GDgallery  {
+        flex: 50%;
+        width: 50%;
+    }
+    
+}

@@ -16,13 +16,11 @@
   z-index: 1000000;
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-
 #baguetteBox-overlay.visible {
   opacity: 1;
 }
-
 #baguetteBox-overlay .full-image {
   display: inline-block;
   position: relative;
@@ -30,13 +28,11 @@
   height: 100%;
   text-align: center;
 }
-
 #baguetteBox-overlay .full-image figure {
   display: inline;
   margin: 0;
   height: 100%;
 }
-
 #baguetteBox-overlay .full-image img {
   display: inline-block;
   width: auto;
@@ -46,7 +42,6 @@
   vertical-align: middle;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
-
 #baguetteBox-overlay .full-image figcaption {
   display: block;
   position: absolute;
@@ -60,7 +55,6 @@
   background-color: rgba(0, 0, 0, 0.6);
   font-family: sans-serif;
 }
-
 #baguetteBox-overlay .full-image:before {
   content: "";
   display: inline-block;
@@ -76,15 +70,13 @@
   height: 100%;
   width: 100%;
   white-space: nowrap;
-  transition: left .4s ease, transform .4s ease;
+  transition: left 0.4s ease, transform 0.4s ease;
 }
-
 #baguetteBox-slider.bounce-from-right {
-  animation: bounceFromRight .4s ease-out;
+  animation: bounceFromRight 0.4s ease-out;
 }
-
 #baguetteBox-slider.bounce-from-left {
-  animation: bounceFromLeft .4s ease-out;
+  animation: bounceFromLeft 0.4s ease-out;
 }
 
 @keyframes bounceFromRight {
@@ -98,7 +90,6 @@
     margin-left: 0;
   }
 }
-
 @keyframes bounceFromLeft {
   0% {
     margin-left: 0;
@@ -110,8 +101,7 @@
     margin-left: 0;
   }
 }
-
-.baguetteBox-button#next-button, .baguetteBox-button#previous-button {
+.baguetteBox-button#previous-button, .baguetteBox-button#next-button {
   top: 50%;
   top: calc(50% - 30px);
   width: 44px;
@@ -130,21 +120,17 @@
   background-color: rgba(50, 50, 50, 0.5);
   color: #ddd;
   font: 1.6em sans-serif;
-  transition: background-color .4s ease;
+  transition: background-color 0.4s ease;
 }
-
 .baguetteBox-button:focus, .baguetteBox-button:hover {
   background-color: rgba(50, 50, 50, 0.9);
 }
-
 .baguetteBox-button#next-button {
   right: 2%;
 }
-
 .baguetteBox-button#previous-button {
   left: 2%;
 }
-
 .baguetteBox-button#close-button {
   top: 20px;
   right: 2%;
@@ -152,7 +138,6 @@
   width: 30px;
   height: 30px;
 }
-
 .baguetteBox-button svg {
   position: absolute;
   left: 0;
@@ -180,7 +165,7 @@
   height: 100%;
   border-radius: 50%;
   background-color: #fff;
-  opacity: .6;
+  opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;

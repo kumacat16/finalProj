@@ -1,20 +1,20 @@
 /*
 ---------------------BLOG CSS----------------------
 1. MAIN BLOG LAYOUT
-2. BUTTON STYLING
-3. BLOG POSTS LAYOUTS
+2. BLOG POSTS LAYOUTS
     a. BlOG ONE
     b. BLOG TWO
 
- 
- 
- 
+
+
+
 */
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
 @import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
 @import url(node_modules/bootstrap/scss/bootstrap.scss);
-@import url(scss/main.scss);
+@import url(scss/blog.scss);
+@import url(scss/gallery.scss);
 .directorBlog {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -22,14 +22,15 @@
   padding: 2rem 2rem 2rem;
   margin: 1rem;
   position: relative;
-  background-color: antiquewhite;
+  background-color: rgba(248, 160, 37, 0.957);
 }
 
 .blleft {
   text-orientation: upright;
   writing-mode: vertical-lr;
-  background-color: lightcyan;
-  padding: 2rem;
+  color: white;
+  font-weight: 1200;
+  padding-top: 8rem;
   letter-spacing: 4rem;
 }
 
@@ -42,10 +43,8 @@
 .bl1,
 .bl2 {
   position: relative;
-  background-color: aquamarine;
   height: 40vh;
 }
-
 .bl1 img,
 .bl2 img {
   width: 100%;
@@ -54,15 +53,19 @@
   object-fit: cover;
   object-position: center;
 }
-
 .bl1 button,
 .bl2 button {
   position: absolute;
-  background-color: rgba(163, 96, 107, 0.7);
-  padding: 1rem 3rem 1rem 3rem;
+  background-color: #89d4d7;
+  padding: 2rem 1rem 2rem 1rem;
   bottom: 0;
-  right: 5px;
+  right: 0;
+}
+.bl1 button a,
+.bl2 button a {
+  text-decoration: none;
   color: white;
+  text-align: center;
 }
 
 .blog1 {
@@ -86,18 +89,26 @@
   margin: 1em;
   text-align: center;
 }
-
 .blogleft img {
   width: 95%;
   height: 100vh;
 }
 
 .blog2 {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
   margin: 1em;
-  background-color: lightcyan;
+  background-color: #8ee4f6;
+  color: white;
+  padding: 1rem;
+}
+.blog2 h1 {
+  font-weight: 700;
+  letter-spacing: 1rem;
+  padding-bottom: 10px;
+}
+.blog2 p {
+  font-weight: 500;
 }
 
 .blogright2 {
@@ -109,10 +120,43 @@
   width: 90%;
   height: 100%;
   margin: 1em;
-  text-align: center;
+  padding: 1rem;
 }
-
 .blogleft2 img {
   width: 95%;
   height: 100vh;
+  align-content: center;
+}
+
+/*
+.blog2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+    margin: 1em;
+    background-color: $org--100;
+    color: $text-color;
+}
+.blogright2 {
+    text-align: center;
+    margin: 1em;
+}
+
+.blogleft2 {
+    width: 90%;
+    height: 100%;
+    margin: 1em;
+    text-align: center;
+
+    img {
+        width: 95%;
+        height: 100vh;
+    }
+}
+*/
+@media (max-width: 992px) {
+  .blog1, .blog2, .blog {
+    flex: 50%;
+    width: 50%;
+  }
 }

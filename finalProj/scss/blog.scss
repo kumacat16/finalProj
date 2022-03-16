@@ -1,8 +1,7 @@
 /*
 ---------------------BLOG CSS----------------------
 1. MAIN BLOG LAYOUT
-2. BUTTON STYLING
-3. BLOG POSTS LAYOUTS
+2. BLOG POSTS LAYOUTS
     a. BlOG ONE
     b. BLOG TWO
 
@@ -10,13 +9,24 @@
  
  
 */
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
 @import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
 
 @import url(node_modules/bootstrap/scss/bootstrap.scss);
-@import url(scss/main.scss);
+@import url(scss/blog.scss);
+@import url(scss/gallery.scss);
+//VARIABLES
+$text-color: white;
+$background-color: hsla(35, 100%, 93%, 0.918);
+$blue-100: hsl(190, 85%, 76%);
+$blue--300: hsl(206, 91%, 75%);
+$org--100: hsla(35, 100%, 55%, 0.918);
+$org--300: hsla(35, 94%, 56%, 0.957);
+$org--500: hsla(35, 90%, 40%, 0.957);
 
+$logo--100: hsl(182, 49%, 69%);
+$logo-300: hsl(183, 100%, 44%);
 // =========== MAIN BLOG LAYOUT // ==========================
 .directorBlog {
     display: grid;
@@ -25,14 +35,15 @@
     padding: 2rem 2rem 2rem; //adds padding to bottom
     margin: 1rem;
     position: relative;
-    background-color: antiquewhite;
+    background-color: $org--300;
 }
 
 .blleft {
     text-orientation: upright;
     writing-mode: vertical-lr;
-    background-color: lightcyan;
-    padding: 2rem;
+    color: $text-color;
+    font-weight: 1200;
+    padding-top: 8rem;
     letter-spacing: 4rem;
 }
 .blright {
@@ -43,7 +54,6 @@
 .bl1,
 .bl2 {
     position: relative;
-    background-color: aquamarine;
     height: 40vh;
     img {
         width: 100%;
@@ -54,11 +64,15 @@
     }
     button {
         position: absolute;
-        background-color: rgba(163, 96, 107, 0.7);
-        padding: 1rem 3rem 1rem 3rem;
+        background-color: $logo--100;
+        padding: 2rem 1rem 2rem 1rem;
         bottom: 0;
-        right: 5px;
-        color: white;
+        right: 0;
+        a{
+            text-decoration: none;
+            color: $text-color;
+            text-align: center;
+        }
     }
 }
 
@@ -91,11 +105,47 @@
 
 // BLOG 2 =========================
 .blog2 {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    background-color: $blue-100;
+    color: $text-color;
+    padding: 1rem;
+    h1{
+        font-weight: 700;
+        letter-spacing: 1rem;
+        padding-bottom: 10px;
+    }
+    p{
+        font-weight: 500;
+    }
+}
+.blogright2 {
+    text-align: center;
+    margin: 1em;
+}
+
+.blogleft2 {
+    width: 90%;
+    height: 100%;
+    margin: 1em;
+    
+    padding: 1rem;
+    img {
+        width: 95%;
+        height: 100vh;
+        align-content: center;
+    }
+}
+
+/*
+.blog2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 1rem;
     margin: 1em;
-    background-color: lightcyan;
+    background-color: $org--100;
+    color: $text-color;
 }
 .blogright2 {
     text-align: center;
@@ -107,8 +157,18 @@
     height: 100%;
     margin: 1em;
     text-align: center;
+    
     img {
         width: 95%;
         height: 100vh;
     }
+}
+*/
+
+@media (max-width: 992px) {
+    .blog1, .blog2, .blog  {
+        flex: 50%;
+        width: 50%;
+    }
+    
 }

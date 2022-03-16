@@ -1,19 +1,13 @@
-/* Comments */
 /*
-Version: 2.0;
-last modified: 02/26/2022;
-Author: Natalie Carlson;
-Email:: Carlso79@wwu.edu
-Table of content
 1. Body
-2. Wrapper
-3. Header
-4. navigation
-5. banner image
-6. main
-7. footer
+2. Navigation
+3. Index
+4. Buttons
+5. Social Media
+6. About 
+7. Contact
 */
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
 @import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
 * {
@@ -21,9 +15,9 @@ Table of content
 }
 
 body {
-  background-color: #e7acb6;
-  font: 20px/1.5 "Nunito", sans-serif;
-  color: black;
+  background-color: rgba(255, 240, 219, 0.918);
+  font: 20px/1.5 "Montserrat", sans-serif;
+  color: white;
 }
 
 a {
@@ -34,8 +28,9 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2rem 2rem 2rem;
-  margin: 1rem;
+  background-color: rgba(255, 159, 26, 0.918);
+  padding: 2rem;
+  margin: 2rem auto;
   width: 100%;
   z-index: 4;
 }
@@ -50,60 +45,70 @@ nav ul {
   display: flex;
   list-style: none;
   text-align: center;
+  background-color: rgba(248, 160, 37, 0.957);
 }
-
 nav li {
   margin: 2rem;
   padding: 1rem 2rem 1rem 2rem;
   white-space: nowrap;
   font-weight: 700;
-  background-color: #e7ace4;
+  background-color: rgba(255, 159, 26, 0.918);
   border-style: solid;
-  border-color: black;
+  border-color: rgba(194, 117, 10, 0.957);
 }
-
 nav a {
   text-decoration: none;
-  color: black;
+  font-weight: 400;
+  color: white;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  background-color: transparent;
 }
 
-/*
-// BUTTON //--------------------------
-.button {
-    cursor: pointer;
-    background-color: $button-background;
-    color: $text-color;
-    position: relative;
-    padding: 0.5em 1em;
-    z-index: 1;
+.mainWelcome {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #8ee4f6;
+  padding: 2rem;
+  height: 500px;
+  width: 100%;
+  margin: 2em auto;
 }
-.button::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-color: blue;
 
-    //TRANSFORMATION
-    transform: scaleX(1);
-    transform-origin: left;
+.mainWelcome > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 9;
+  position: relative;
+  backdrop-filter: blur(1rem);
 }
-.button:hover {
-    background-color: red;
-    color: $text-color;
 
-    //TRANSITION EFFECT
-    transform: scaleX(0);
-    transform-origin: right;
+.welText > h1 {
+  font-weight: 1000;
+  color: white;
 }
-*/
+
+.welText > button {
+  cursor: pointer;
+  position: absolute;
+  background-color: #00d5e0;
+  margin: 1rem;
+  padding: 1rem;
+  z-index: 11;
+}
+.welText > button a {
+  text-decoration: none;
+  color: white;
+}
+
 .button {
   cursor: pointer;
-  background-color: #b493c8;
-  color: black;
+  background-color: #8ee4f6;
+  color: white;
   position: relative;
   padding: 0.5em 1em;
   z-index: 1;
@@ -117,14 +122,14 @@ nav a {
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: pink;
+  background-color: #85c7f9;
   transform: scaleX(1);
   transform-origin: left;
 }
 
 .button:hover {
-  background-color: #b493c8;
-  color: black;
+  background-color: #85c7f9;
+  color: white;
   transform: scaleX(0);
   transform-origin: right;
 }
@@ -141,158 +146,158 @@ nav a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #cf8c97;
+  background-color: #00d5e0;
   margin: 2rem 8rem 2rem 8rem;
-  opacity: 20%;
+  z-index: 200;
 }
-
 .socials .insta,
 .socials .youtube {
-  padding: 2rem;
+  padding: 1rem;
 }
 
-.directorGal {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  column-gap: 1em;
-  padding: 2rem 2rem 2rem;
+.intro {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem auto;
+  background-color: rgba(255, 159, 26, 0.918);
+}
+
+.introLeft {
   margin: 1rem;
-  position: relative;
-  background-color: antiquewhite;
+  justify-items: flex-start;
 }
 
-.maingalText {
-  grid-column: 1;
-  text-orientation: upright;
-  writing-mode: vertical-lr;
-  background-color: lightcyan;
-}
-
-.rightside {
-  display: grid;
-  row-gap: 1rem;
-}
-
-.gallArt {
-  position: relative;
-  background-color: aquamarine;
-  height: 20vh;
-}
-
-.gallGD {
-  position: relative;
-  background-color: blue;
-  height: 20vh;
-}
-
-.gallPhoto {
-  position: relative;
-  background-color: forestgreen;
-  height: 20vh;
-}
-
-.gallPhoto > img,
-.gallGD > img,
-.gallArt > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  position: absolute;
-}
-
-.gallPhoto > button,
-.gallGD > button,
-.gallArt > button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(163, 96, 107, 0.7);
-  padding: 0rem 6rem 0rem 6rem;
-  color: white;
-}
-
-.indexMain {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-row: 1fr 1fr;
-  column-gap: 1rem;
-  margin: 1em;
-}
-
-.mainWelcome {
-  position: absolute;
-  z-index: 11;
-}
-
-.btnGal {
+.introRight {
+  margin: 1rem;
+  background-color: #89d4d7;
   padding: 1em;
+  justify-items: center;
+  align-content: center;
+}
+.introRight h1, .introRight h3 {
+  font-weight: 700;
+  padding-top: 1rem;
 }
 
-.artGallery {
-  position: relative;
-}
-
-.artslider {
-  grid-column: span 2;
-  grid-row: span 2;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 10;
-  background-color: #b493c8;
-}
-
-.artslider img {
-  width: 100%;
-  height: 100%;
-}
-
-.GDgallery {
-  background-color: #e7ace4;
+.reachOut {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem;
+  background-color: #8ee4f6;
+  height: 50vh;
+}
+
+.reachText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   padding: 2rem;
 }
-
-.card img {
-  width: 100%;
-  object-fit: cover;
+.reachText h1 {
+  display: inline;
+  font-weight: bolder;
+}
+.reachText p {
+  font-weight: 600;
 }
 
+.contactForm {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+  row-gap: 4rem;
+  padding: 2rem;
+}
+.contactForm #phone, .contactForm #email, .contactForm #name {
+  padding: 1rem;
+  background-color: rgba(255, 240, 219, 0.918);
+}
+.contactForm .submit {
+  padding: 2px;
+  background-color: rgba(255, 240, 219, 0.918);
+}
+
+@media (max-width: 992px) {
+  .label {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav ul {
+    text-align: center;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin: 0 auto;
+    top: 5.6em;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+    background-color: rgba(255, 240, 219, 0.918);
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  nav a {
+    opacity: 1;
+  }
+
+  #toggle:checked + .menu {
+    max-height: 300px;
+  }
+
+  header > .logo {
+    padding: 1em 0.5em 0.5em 0.5em;
+  }
+
+  .menu a {
+    display: block;
+    margin: 0;
+  }
+}
 /*
 
-//box shadow holds text
-.galArt,
-.galPhoto,
-.galGD {
-    position: relative;
+
     //box shadow holds text
     -webkit-box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
     box-shadow: inset 79px 58px 1px 4px rgba(0, 0, 0, 0);
 }
-.directorGal > a {
+
+.galBtn {
+    cursor: pointer;
+    background-color: $button-background;
+    color: $org--100;
+    position: relative;
+    padding: 0.5em 1em;
+    z-index: 1;
+}
+.galBtn::after {
+    content: "";
     position: absolute;
-    inset: 20px 40px 30px 10px;
-    background-color: $background-color;
-
-}
-.directorGal > img {
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $org--300;
+
+    //TRANSFORMATION
+    transform: scaleX(1);
+    transform-origin: left;
 }
+.galBtn:hover {
+    background-color: red;
+    color: $text-color;
 
-//ART GALLERY
-
-
-
+    //TRANSITION EFFECT
+    transform: scaleX(0);
+    transform-origin: right;
+}
 
 
 .btnGal {
     grid-column: 4fr;
     color: black;
     padding: 0.5em;
-    background-color: white;
+    background-color: $text-color;
 }
 
 // TOY Photo gallery container
@@ -308,7 +313,7 @@ nav a {
 }
 
 .item > a > img {
-    color: white;
+    color: $text-color;
 }
 
 .button {
@@ -317,39 +322,5 @@ nav a {
 .footer {
     display: grid;
     text-align: center;
-}
-
-@media (max-width: 992px) {
-    //come back to
-    .label {
-        display: block;
-        cursor: pointer;
-    }
-    nav ul {
-        text-align: center;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        margin: 0 auto;
-        top: 5.6em;
-        width: 80%;
-        left: 10%;
-        position: absolute;
-        background-color: $text-background;
-        max-height: 0;
-        overflow: hidden;
-    }
-    nav a {
-        opacity: 1;
-    }
-    #toggle:checked + .menu {
-        max-height: 300px;
-    }
-    header > .logo {
-        padding: 1em 0.5em 0.5em 0.5em;
-    }
-    .menu a {
-        display: block;
-        margin: 0;
-    }
 }
 */
